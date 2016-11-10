@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Animal_Control.Models.AC_Visita_Veterinaria>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTablas.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AC_Animal.Especie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AC_Usuario.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AC_Animal.Especie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AC_Usuario.Correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VV_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VV_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VV_ID })
+        </td>
+    </tr>
+}
+
+</table>

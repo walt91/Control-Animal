@@ -1,0 +1,47 @@
+﻿@model Animal_Control.Models.AC_Daño
+
+@{
+    ViewBag.Title = "Eliminar Daño";
+    Layout = "~/Views/Shared/_LayoutTablas.cshtml";
+}
+
+<section id="main-content" class=" ">
+    <section class="wrapper main-wrapper" style=''>
+
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+
+            <div>
+                <h3>Eliminar Daño</h3>
+                <h5>Quieres borrar este daño?</h5>
+                <hr />
+                <table cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => Model.D_Id) </td>
+                            <td>@Html.DisplayFor(modelItem => Model.Nombre)  </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar Daño" class="btn btn-default" />
+                    <input type="submit" href="@Url.Action("Index", "Daño")" value="Cancelar" class="btn btn-default" />
+                </div>
+
+            </div>
+        }
+    </section>
+</section>
+

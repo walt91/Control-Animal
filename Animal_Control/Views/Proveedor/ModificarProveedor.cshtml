@@ -1,0 +1,40 @@
+﻿@model Animal_Control.Models.AC_Proveedor
+
+@{
+    ViewBag.Title = "ModificarProveedor";
+    Layout = "~/Views/Shared/_LayoutTablas.cshtml";
+}
+
+
+<section id="main-content" class=" ">
+    <section class="wrapper main-wrapper" style=''>
+        <h2>Modificar Proveedor</h2>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.P_ID)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Guardar Proveedor" class="btn btn-default" />
+                        <input type="submit" href="@Url.Action("Index", "Proveedor")" value="Cancelar" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </section>
+</section>

@@ -1,0 +1,50 @@
+﻿@model Animal_Control.Models.AC_Animal
+
+@{
+    ViewBag.Title = "Eliminar Animal";
+    Layout = "~/Views/Shared/_LayoutTablas.cshtml";
+}
+
+<section id="main-content" class=" ">
+    <section class="wrapper main-wrapper" style=''>
+
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+
+            <div>
+                <h3>Eliminar Animal</h3>
+                <h5>Quieres borrar este Animal?</h5>
+                <hr />
+                <table cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Especie</th>
+                            <th>Sexo</th>
+                            <th>Comentario</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => Model.ID) </td>
+                            <td>@Html.DisplayFor(modelItem => Model.Especie)  </td>
+                            <td>@Html.DisplayFor(modelItem => Model.Sexo)  </td>
+                            <td>@Html.DisplayFor(modelItem => Model.Comentario)  </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar Animal" class="btn btn-default" />
+                    <input type="submit" href="@Url.Action("Index", "Animal")" value="Cancelar" class="btn btn-default" />
+                </div>
+
+            </div>
+        }
+    </section>
+</section>

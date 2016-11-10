@@ -1,0 +1,519 @@
+﻿
+<!DOCTYPE html>
+<html class="">
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Tittle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link rel="shortcut icon" href="~/Content/images/favicon.png" type="image/x-icon" />    <!-- Favicon -->
+    <link rel="apple-touch-icon-precomposed" href="~/Content/images/apple-touch-icon-57-precomposed.png">	<!-- For iPhone -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/images/apple-touch-icon-114-precomposed.png">    <!-- For iPhone 4 Retina display -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/images/apple-touch-icon-72-precomposed.png">    <!-- For iPad -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/images/apple-touch-icon-144-precomposed.png">    <!-- For iPad Retina display -->
+    <!-- CORE CSS FRAMEWORK - START -->
+    <link href="~/Content/plugins/pace/pace-theme-flash.css" rel="stylesheet" />
+    <link href="~/Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" />
+    <!-- CORE CSS FRAMEWORK - END -->
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <link href="~/Content/plugins/morris-chart/css/morris.css" rel="stylesheet" />
+    <script src="~/Content/plugins/jquery-ui/smoothness/jquery-ui.min.js"></script>
+    <link href="~/Content/plugins/rickshaw-chart/css/graph.css" rel="stylesheet" />
+    <link href="~/Content/plugins/rickshaw-chart/css/detail.css" rel="stylesheet" />
+    <link href="~/Content/plugins/rickshaw-chart/css/extensions.css" rel="stylesheet" />
+    <link href="~/Content/plugins/rickshaw-chart/css/rickshaw.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/rickshaw-chart/css/lines.css" rel="stylesheet" />
+    <link href="~/Content/plugins/rickshaw-chart/css/legend.css" rel="stylesheet" />
+    <link href="~/Content/plugins/jvectormap/jquery-jvectormap-2.0.1.css" rel="stylesheet" />
+    <link href="~/Content/plugins/icheck/skins/minimal/white.css" rel="stylesheet" />       <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+    <!-- CORE CSS TEMPLATE - START -->
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" />
+    <!-- CORE CSS TEMPLATE - END -->
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<body class=" ">
+    <!-- START TOPBAR -->
+    <div class='page-topbar '>
+        <div class='logo-area'>
+            <a>Animal Control</a>
+        </div>
+        <div class='quick-area'>
+            <div class='pull-left'>
+                <ul class="info-menu left-links list-inline list-unstyled">
+                    <li class="sidebar-toggle-wrap">
+                        <a href="#" data-toggle="sidebar" class="sidebar_toggle">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>                                                         
+                </ul>
+            </div>
+            <div class='pull-right'>
+                <ul class="info-menu right-links list-inline list-unstyled">
+                    <li class="profile">
+                        <a href="#" data-toggle="dropdown" class="toggle">
+                            <img src="data/profile/profile.png" alt="user-image" class="img-circle img-inline">
+                            <span>Jason Bourne <i class="fa fa-angle-down"></i></span>
+                        </a>
+                        <ul class="dropdown-menu profile animated fadeIn">
+                            <li>
+                                <a href="#settings">
+                                    <i class="fa fa-wrench"></i>
+                                    Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#profile">
+                                    <i class="fa fa-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#help">
+                                    <i class="fa fa-info"></i>
+                                    Help
+                                </a>
+                            </li>
+                            <li class="last">
+                                <a href="ui-login.html">
+                                    <i class="fa fa-lock"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- END TOPBAR -->
+
+    <div class="page-container row-fluid">
+        <!-- SIDEBAR - START -->
+        <div class="page-sidebar ">
+            <!-- MAIN MENU - START -->
+            <div class="page-sidebar-wrapper" id="main-menu-wrapper">
+
+                <!-- USER INFO - START -->
+                <div class="profile-info row">
+
+                    <div class="profile-image col-md-4 col-sm-4 col-xs-4">
+                        <a href="ui-profile.html">
+                            <img src="data/profile/profile.png" class="img-responsive img-circle">
+                        </a>
+                    </div>
+
+                    <div class="profile-details col-md-8 col-sm-8 col-xs-8">
+
+                        <h3>
+                            <a href="ui-profile.html">@ViewBag.Usuario</a>
+
+                            <!-- Available statuses: online, idle, busy, away and offline -->
+                            <span class="profile-status online"></span>
+                        </h3>
+
+                    </div>
+
+                </div>
+                <!-- USER INFO - END -->
+
+                <ul class='wraplist'>
+
+                    <li class="open">
+                        <a href="Home/Index">
+                            <i class="fa fa-home"></i>
+                            <span class="title">Home</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span class="title">Usuarios</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="general.html" target='_blank'>Ver Usuarios</a>
+                            </li>
+                            <li>
+                                <a class="" href="hospital.html" target='_blank'>Agregar Nuevo Usuario</a>
+                            </li>
+                            <li>
+                                <a class="" href="music.html" target='_blank'>Editar Usuario</a>
+                            </li>
+                            <li>
+                                <a class="" href="crm.html" target='_blank'>Elimir Usuario</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-globe"></i>
+                            <span class="title">Zonas</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="widgets.html">Ver Zonas</a>
+                            </li>
+                            <li>
+                                <a class="" href="widgets.html">Agregar Nueva Zona</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-calendar.html">Editar Zona</a>
+                            </li>
+                            <li>
+                                <a class="" href="mail-inbox.html">Eliminar Zona</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-warning"></i>
+                            <span class="title">Riesgos</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="ui-typography.html">Ver Daños</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-accordion.html">Agregar Nuevo Daño</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-progress.html">Editar Daño</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-icons.html">Eliminar Daño</a>
+                            </li>                           
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-paw"></i>
+                            <span class="title">Animales</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="form-elements.html">Ver Animales</a>
+                            </li>
+                            <li>
+                                <a class="" href="form-components.html">Agregar Nuevo Animal</a>
+                            </li>
+                            <li>
+                                <a class="" href="form-wizard.html">Editar Animal</a>
+                            </li>
+                            <li>
+                                <a class="" href="form-validation.html">Eliminar Animal</a>
+                            </li>
+                            <li>
+                                <a class="" href="form-masks.html">Ver Controles Diarios</a>
+                            </li>
+                            <li>
+                                <a class="" href="form-fileupload.html">Agregar Control Diario</a>
+                            </li>
+                            <li>
+                                <a class="" href="form-editors.html">Editar Control Diario</a>
+                            </li>
+                            <li>
+                                <a class="" href="form-masks.html">Eliminar Control Diario</a>
+                            </li>
+                            <li>
+                                <a class="" href="form-masks.html">Aplicar Vacuna</a>
+                            </li>
+                            <li>
+                                <a class="" href="form-masks.html">Aplicar Medicamento</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-gift"></i>
+                            <span class="title">Articulo</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="ui-pricing.html">Ver Articulos</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-profile.html">Agregar Nuevo Articulo</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-timeline.html">Editar Articulo</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-invoice.html">Eliminar Articulo</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-members.html">Ingresar Articulo</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-gallery.html">Agregar Stock Minimo</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-search.html">Editar Stock Minimo</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-blogs.html">Elimimar Stock Minimo</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-imagecrop.html">Agregar Stock Maximo</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-tocify.html">Editar Stock Maximo</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-faq.html">Elimimar Stock Maximo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-truck"></i>
+                            <span class="title">Proveedor</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="charts-morris.html">Ver Proveedor</a>
+                            </li>
+                            <li>
+                                <a class="" href="charts-chartjs.html">Agregar Nuevo Proveedor</a>
+                            </li>
+                            <li>
+                                <a class="" href="charts-flot.html">Editar Proveedor</a>
+                            </li>
+                            <li>
+                                <a class="" href="charts-sparkline.html">Eliminar Proveedor</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-usd"></i>
+                            <span class="title">Gastos</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="ui-login.html">Ver Gastos</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-lockscreen.html">Agregar Nuevo Gasto</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-register.html">Editar Gasto</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-register.html">Eliminar Gasto</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-usd"></i>
+                            <span class="title">Ingresos</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="tables-basic.html">Ver Ingresos</a>
+                            </li>
+                            <li>
+                                <a class="" href="tables-data.html">Agregar Nuevo Ingreso</a>
+                            </li>
+                            <li>
+                                <a class="" href="tables-responsive.html">Editar Ingreso</a>
+                            </li>
+                            <li>
+                                <a class="" href="tables-responsive.html">Eliminar Ingreso</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            <span class="title">Medicamento</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="mail-inbox.html">Ver Medicamentos</a>
+                            </li>
+                            <li>
+                                <a class="" href="mail-compose.html">Agregar Nuevo Medicamento</a>
+                            </li>
+                            <li>
+                                <a class="" href="mail-view.html">Editar Medicamento</a>
+                            </li>
+                            <li>
+                                <a class="" href="mail-view.html">Eliminar Medicamento</a>
+                            </li>
+                        </ul>
+                    </li>                 
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-pushpin"></i>
+                            <span class="title">Vacunas</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="layout-default.html">Ver Vacunas</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-collapsed.html">Agregar Nueva Vacuna</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-chat.html">Editar Vacuna</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-boxed.html">Eliminar Vacuna</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span class="title">Persona que Reporta</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="layout-default.html">Agregar Persona</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-collapsed.html">Editar Persona</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-chat.html">Eliminar Persona</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            <span class="title">Reportes</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="layout-default.html">Reporte del inventario</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-collapsed.html">Reporte de vacunas aplicadas</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-chat.html">Reporte de las zonas de más riesgo</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-boxed.html">Reporte  de animales liberados</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-boxed.html">Reporte de animales que ingresan al Proyecto</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-boxed.html">Reporte de los riesgos más frecuente</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-boxed.html">Reporte de gastos</a>
+                            </li>
+                            <li>
+                                <a class="" href="layout-boxed.html">Reporte de ingresos</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- MAIN MENU - END -->
+        </div>
+        <!--  SIDEBAR - END -->       
+        <div class="chatapi-windows ">
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+ 
+    <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+    <!-- CORE JS FRAMEWORK - START -->
+    <script src="~/Scripts/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Scripts/js/jquery.easing.min.js"></script>
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/plugins/pace/pace.min.js"></script>
+    <script src="~/Content/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="~/Content/plugins/viewport/viewportchecker.js"></script>
+    <!-- CORE JS FRAMEWORK - END -->
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <script src="~/Content/plugins/rickshaw-chart/vendor/d3.v3.js"></script>
+    <script src="~/Content/plugins/jquery-ui/smoothness/jquery-ui.min.js"></script>
+    <script src="~/Content/plugins/rickshaw-chart/js/Rickshaw.All.js"></script>
+    <script src="~/Content/plugins/sparkline-chart/jquery.sparkline.min.js"></script>
+    <script src="~/Content/plugins/easypiechart/jquery.easypiechart.min.js"></script>
+    <script src="~/Content/plugins/morris-chart/js/raphael-min.js"></script>
+    <script src="~/Content/plugins/morris-chart/js/morris.min.js"></script>
+    <script src="~/Content/plugins/jvectormap/jquery-jvectormap-2.0.1.min.js"></script>
+    <script src="~/Content/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/Content/plugins/gauge/gauge.min.js"></script>
+    <script src="~/Content/plugins/icheck/icheck.min.js"></script>
+    <script src="~/Scripts/js/dashboard.js"></script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+    <!-- CORE TEMPLATE JS - START -->
+    <script src="~/Scripts/js/scripts.js"></script>
+    <!-- END CORE TEMPLATE JS - END -->
+    <!-- Sidebar Graph - START -->
+    <script src="~/Content/plugins/sparkline-chart/jquery.sparkline.min.js"></script>
+    <script src="~/Scripts/js/chart-sparkline.js"></script>
+    <!-- Sidebar Graph - END -->
+    <!-- General section box modal start -->
+    <div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-labelledby="ultraModal-Label" aria-hidden="true">
+        <div class="modal-dialog animated bounceInDown">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Section Settings</h4>
+                </div>
+                <div class="modal-body">
+                    Body goes here...
+
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                    <button class="btn btn-success" type="button">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal end -->
+
+   
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+
+</script>

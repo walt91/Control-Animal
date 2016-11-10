@@ -1,0 +1,50 @@
+﻿@model Animal_Control.Models.AC_Usuario
+
+@{
+    ViewBag.Title = "Eliminar Usuario";
+    Layout = "~/Views/Shared/_LayoutTablas.cshtml";
+}
+
+<section id="main-content" class=" ">
+    <section class="wrapper main-wrapper" style=''>
+
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+
+            <div>
+                <h3>Eliminar Usuario</h3>
+                <h5>Quieres borrar este usuario?</h5>
+                <hr />
+                <table cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => Model.U_ID) </td>
+                            <td>@Html.DisplayFor(modelItem => Model.Nombre)  </td>
+                            <td>@Html.DisplayFor(modelItem => Model.Correo)  </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar Usuario" class="btn btn-default" />
+                    <input type="submit" href="@Url.Action("Index", "User")" value="Cancelar" class="btn btn-default" />
+                </div>
+
+            </div>
+        }
+    </section>
+</section>
+

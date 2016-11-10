@@ -1,0 +1,61 @@
+﻿@model Animal_Control.Models.AC_Ingresos
+
+@{
+    ViewBag.Title = "AgregarIngresos";
+    Layout = "~/Views/Shared/_LayoutTablas.cshtml";
+}
+<section id="main-content" class=" ">
+    <section class="wrapper main-wrapper" style=''>
+        <h2>Agregar Nuevo Ingreso</h2>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Dinero, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Dinero, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Dinero, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ID_Usuario, "Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("ID_Usuario", ViewBag.usuario as SelectList)
+                        @Html.ValidationMessageFor(model => model.ID_Usuario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Comentario, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comentario, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comentario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" onclick="pregunta()" value="Agregar Ingreso" class="btn btn-default" />
+                        @*<input type="button" onclick="@Url.Action("Index", "Ingresos")" value="Cancelar" class="btn btn-default" />*@
+                    </div>
+                </div>
+            </div>
+        }
+
+        <script language="JavaScript">
+
+function pregunta(){
+    if (confirm('¿Quieres eliminar este registro?')){
+       document.tuformulario.submit()
+    }
+}
+        </script>
+    </section>
+</section>

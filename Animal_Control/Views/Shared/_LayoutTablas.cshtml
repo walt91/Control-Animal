@@ -1,0 +1,396 @@
+﻿
+<!DOCTYPE html>
+<html class="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Tittle</title>
+
+    <link rel="shortcut icon" href="~/Content/images/favicon.png" type="image/x-icon" />    <!-- Favicon -->
+    <link rel="apple-touch-icon-precomposed" href="~/Content/images/apple-touch-icon-57-precomposed.png">	<!-- For iPhone -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/images/apple-touch-icon-114-precomposed.png">    <!-- For iPhone 4 Retina display -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/images/apple-touch-icon-72-precomposed.png">    <!-- For iPad -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/images/apple-touch-icon-144-precomposed.png">    <!-- For iPad Retina display -->
+    <!-- CORE CSS FRAMEWORK - START -->
+    <link href="~/Content/plugins/pace/pace-theme-flash.css" rel="stylesheet" />
+    <link href="~/Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/plugins/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+    <!-- CORE CSS FRAMEWORK - END -->
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <link href="~/Content/plugins/datatables/css/jquery.dataTables.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="~/Content/plugins/datatables/extensions/Responsive/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+    <!-- CORE CSS TEMPLATE - START -->
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" type="text/css" />
+    <!-- CORE CSS TEMPLATE - END -->
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class=" ">
+    <!-- START TOPBAR -->
+    <div class='page-topbar '>
+        <div class='logo-area'>
+
+        </div>
+        <div class='quick-area'>
+            <div class='pull-left'>
+                <ul class="info-menu left-links list-inline list-unstyled">
+                    <li class="sidebar-toggle-wrap">
+                        <a href="#" data-toggle="sidebar" class="sidebar_toggle">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>           
+        </div>
+    </div>
+    <!-- END TOPBAR -->
+
+    <div class="page-container row-fluid">
+        <!-- SIDEBAR - START -->
+        <div class="page-sidebar ">
+            <!-- MAIN MENU - START -->
+            <div class="page-sidebar-wrapper" id="main-menu-wrapper">
+
+                <!-- USER INFO - START -->
+                <div class="profile-info row">
+
+                    <div class="profile-details col-md-8 col-sm-8 col-xs-8">
+                        <h3>                            
+                            <a href="ui-profile.html">@ViewBag.Usuario</a>
+                        </h3>
+
+                    </div>
+
+                </div>
+                <!-- USER INFO - END -->
+
+                <ul class='wraplist'>
+
+                    <li class="open">
+                        <a href="@Url.Action("Index", "Animal")">
+                            <i class="fa fa-home"></i>
+                            <span class="title">Home</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span class="title">Usuarios</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "User")" >Ver Usuarios</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarUsuario", "User")" >Agregar Nuevo Usuario</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-globe"></i>
+                            <span class="title">Zonas</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "Zona")">Ver Zonas</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarZona", "Zona")">Agregar Nueva Zona</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-warning"></i>
+                            <span class="title">Riesgos</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "Daño")">Ver Daños</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarDaño", "Daño")">Agregar Nuevo Daño</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-paw"></i>
+                            <span class="title">Animales</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "Animal")">Ver Animales</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarAnimal", "Animal")">Agregar Nuevo Animal</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Index", "Liberacion")">Ver Animales Liberados</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarLiberacion", "Liberacion")">Agregar Nuevo Animal Liberado</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Index", "ControlDiario")">Ver Controles Diarios</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarControl_Diario", "ControlDiario")">Agregar Control Diario</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AplicarVacuna", "ControlDiario")">Aplicar Vacuna</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AplicarMedicamento", "ControlDiario")">Aplicar Medicamento</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-gift"></i>
+                            <span class="title">Articulo</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "Articulo")">Ver Articulos</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Agregar", "Articulo")">Agregar Nuevo Articulo</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Index", "StockMinimo")">Ver Stocks Minimos</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Agregar", "StockMinimo")">Agregar Stock Minimo</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Index", "StockMaximo")">Ver Stocks Maximos</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Agregar", "StockMaximo")">Agregar Stock Maximo</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Index", "ArticuloProveedor")">Ver Articulos Proveedor</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Agregar", "ArticuloProveedor")">Agregar Articulo Proveedor</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-truck"></i>
+                            <span class="title">Proveedor</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "Proveedor")">Ver Proveedor</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarProveedor", "Proveedor")">Agregar Nuevo Proveedor</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-usd"></i>
+                            <span class="title">Gastos</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "Gastos")">Ver Gastos</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Agregar", "Gastos")">Agregar Nuevo Gasto</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-usd"></i>
+                            <span class="title">Ingresos</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "Ingresos")">Ver Ingresos</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarIngresos", "Ingresos")">Agregar Nuevo Ingreso</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            <span class="title">Medicamento</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "Medicamento")">Ver Medicamentos</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarMedicamento", "Medicamento")">Agregar Nuevo Medicamento</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-pushpin"></i>
+                            <span class="title">Vacunas</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "Vacuna")">Ver Vacunas</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarVacuna", "Vacuna")">Agregar Nueva Vacuna</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span class="title">Persona que Reporta</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "PersonaReporta")">Ver Persona</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("AgregarPersona", "PersonaReporta")">Agregar Persona</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            <span class="title">Reportes</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Reporte", "Articulo")">Reporte del inventario</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Reporte", "Vacuna")">Reporte de vacunas aplicadas</a>
+                            </li>
+                            <li>
+                                <a class="" ref="@Url.Action("Reporte", "Zona")">Reporte de las zonas de más riesgo</a>
+                            </li>
+                            <li>
+                                <a class="" ref="@Url.Action("ReporteLiberado", "Animal")">Reporte  de animales liberados</a>
+                            </li>
+                            <li>
+                                <a class="" ref="@Url.Action("ReporteIngresa", "Animal")">Reporte de animales que ingresan al Proyecto</a>
+                            </li>
+                            <li>
+                                <a class="" ref="@Url.Action("Reporte", "Daño")">Reporte de los riesgos más frecuente</a>
+                            </li>
+                            <li>
+                                <a class="" ref="@Url.Action("Reporte", "Gastos")">Reporte de gastos</a>
+                            </li>
+                            <li>
+                                <a class="" ref="@Url.Action("Reporte", "Ingresos")">Reporte de ingresos</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Logout", "Account")">
+                            <i class="glyphicon glyphicon-log-out"></i>
+                            <span class="title">Cerrar Sesión</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- MAIN MENU - END -->
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+        <!--  SIDEBAR - END -->
+        <div class="chatapi-windows ">
+        </div>
+
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+    <!-- CORE JS FRAMEWORK - START -->
+    <script src="~/Scripts/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/js/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/perfect-scrollbar/perfect-scrollbar.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/viewport/viewportchecker.js" type="text/javascript"></script>
+    <!-- CORE JS FRAMEWORK - END -->
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <script src="~/Content/plugins/datatables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/datatables/extensions/Responsive/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"></script>
+
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+    <!-- CORE TEMPLATE JS - START -->
+    <script src="~/Scripts/js/scripts.js" type="text/javascript"></script>
+    <!-- END CORE TEMPLATE JS - END -->
+    <!-- Sidebar Graph - START -->
+    <script src="~/Content/plugins/sparkline-chart/jquery.sparkline.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/js/chart-sparkline.js" type="text/javascript"></script>
+    <!-- General section box modal start -->
+
+
+    <div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-labelledby="ultraModal-Label" aria-hidden="true">
+        <div class="modal-dialog animated bounceInDown">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Section Settings</h4>
+                </div>
+                <div class="modal-body">
+                    Body goes here...
+
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                    <button class="btn btn-success" type="button">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal end -->
+
+</body>
+</html>
+
+
+
