@@ -17,10 +17,10 @@ namespace Animal_Control.Controllers
         public ActionResult Index()
         {
             StringBuilder visitaVeterinario = new StringBuilder();
-            visitaVeterinario.AppendLine("SELECT s.SMA_ID ID, a.Nombre Articulo, s.Cantidad " +
-                                "from AC_Stock_Maximo s " +
-                                "INNER JOIN AC_Articulo a ON " +
-                                "s.SMA_ID = a.A_ID");
+            visitaVeterinario.AppendLine("SELECT v.VV_ID, a.Especie Animal, u.Nombre, v.Fecha " +
+                                "from AC_Visita_Veterinaria v " +
+                                "INNER JOIN AC_Animal a ON v.VV_ID = a.ID " +
+                                "INNER JOIN AC_USer u ON v.VV_ID = u.U_ID ");
             var model = db.Database.SqlQuery<QueryVisitaVeterinario>(visitaVeterinario.ToString()).ToList();
             return View(model);
         }
@@ -41,7 +41,9 @@ namespace Animal_Control.Controllers
             {
                 if (v != null)
                 {
+                    AC_Usuario userLog = db.AC_Usuario.SingleOrDefault(x => x.Correo == User.Identity.Name);
                     veterinario.ID_Animal = v.ID_Animal;
+                    veterinario.ID_Usuario = userLog.U_ID;
                     veterinario.Fecha = DateTime.Now;
                     db.AC_Visita_Veterinaria.Add(veterinario);
                     db.SaveChanges();

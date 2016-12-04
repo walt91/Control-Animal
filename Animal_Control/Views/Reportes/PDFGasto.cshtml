@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Animal_Control.Models.QueryGastos>
+
+@{
+    ViewBag.Title = "ReporteGasto";
+    Layout = "~/Views/Shared/_LayoutTablas.cshtml";
+}
+
+<h2>Reporte Gasto</h2>
+
+<section id="main-content" class=" ">
+    <section class="wrapper main-wrapper" style=''>
+
+        <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+            <div class="page-title">
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="col-lg-12">
+            <section class="box ">
+                <header class="panel_header">
+                    <h2 class="title pull-left">Gastos</h2>
+
+                </header>
+                <div class="content-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+                            <table id="example-1" class="table table-striped dt-responsive display" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Articulo</th>
+                                        <th>Costo</th>
+                                        <th>Usuario</th>
+                                        <th>Fecha</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.G_ID</td>
+                                            <td>@item.Articulo</td>
+                                            <td>₡@item.Costo</td>
+                                            <td>@item.Usuario</td>
+                                            <td>@item.Fecha</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Descargar reporte" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        <section id="main-content" class=" ">
+            <section class="wrapper main-wrapper" style=''>
