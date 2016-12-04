@@ -67,14 +67,5 @@ namespace Animal_Control.Controllers
             return RedirectToAction("Login", "Account");
         }
 
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-
     }
 }

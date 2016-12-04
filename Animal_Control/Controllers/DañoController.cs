@@ -14,12 +14,14 @@ namespace Animal_Control.Controllers
         AC_Daño daño = new AC_Daño();
 
         // GET: Daño
+        [Authorize]
         public ActionResult Index()
         {
             var daño = db.AC_Daño.ToList();
             return View(daño);
         }
 
+        [Authorize]
         public ActionResult AgregarDaño()
         {
             return View();
@@ -46,6 +48,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult ModificarDaño(int id)
         {
             try
@@ -86,6 +89,7 @@ namespace Animal_Control.Controllers
             return View(daño);
         }
 
+        [Authorize]
         public ActionResult EliminarDaño(int id)
         {
             var model = db.AC_Daño.Find(id);

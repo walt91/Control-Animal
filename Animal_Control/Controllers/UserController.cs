@@ -13,12 +13,14 @@ namespace Animal_Control.Controllers
         AC_Usuario user = new AC_Usuario();
 
         // GET: User
+        [Authorize]
         public ActionResult Index()
         {
             var model = db.AC_Usuario.ToList();
             return View(model);
         }
 
+        [Authorize]
         public ActionResult AgregarUsuario()
         {
             return View();
@@ -53,6 +55,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult ModificarUsuario(int id)
         {
             user = db.AC_Usuario.Find(id);
@@ -84,6 +87,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult EliminarUsuario(int id)
         {
             var model = db.AC_Usuario.Find(id);

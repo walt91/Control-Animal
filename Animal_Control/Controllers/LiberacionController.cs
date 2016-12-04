@@ -13,6 +13,7 @@ namespace Animal_Control.Controllers
         AC_Liberacion liberado = new AC_Liberacion();
 
         // GET: Liberacion
+        [Authorize]
         public ActionResult Index()
         {
             var model = db.AC_Liberacion.ToList();
@@ -21,6 +22,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult AgregarLiberacion()
         {
             try
@@ -87,6 +89,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult ModificarLiberacion(int id)
         {
             var model = db.AC_Liberacion.Find(id);
@@ -154,6 +157,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult EliminarLiberacion(int id)
         {
             var model = db.AC_Liberacion.Find(id);

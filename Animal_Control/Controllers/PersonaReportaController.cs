@@ -13,12 +13,14 @@ namespace Animal_Control.Controllers
         AC_Persona_Reporta PReporta = new AC_Persona_Reporta();
 
         // GET: PersonaReporta
+        [Authorize]
         public ActionResult Index()
         {
             var model = db.AC_Persona_Reporta.ToList();
             return View(model);
         }
 
+        [Authorize]
         public ActionResult AgregarPersona()
         {
             return View();
@@ -51,6 +53,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult ModificarPersona(int id)
         {
             PReporta = db.AC_Persona_Reporta.Find(id);
@@ -81,6 +84,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult EliminarPersona(int id)
         {
             var model = db.AC_Persona_Reporta.Find(id);

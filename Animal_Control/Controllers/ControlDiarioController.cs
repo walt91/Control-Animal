@@ -14,6 +14,7 @@ namespace Animal_Control.Controllers
         public AnimalControl db = new AnimalControl();
         AC_Control_Diario controlDiario = new AC_Control_Diario();
         // GET: ControlDiario
+        [Authorize]
         public ActionResult Index()
         {
             StringBuilder gastos = new StringBuilder();
@@ -30,6 +31,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult AgregarControl_Diario()
         {
             var animal = db.AC_Animal.ToList();
@@ -89,6 +91,8 @@ namespace Animal_Control.Controllers
             }
             return View();
         }
+
+        [Authorize]
         public ActionResult ModificarControl_Diario(int id)
         {
             var animal = db.AC_Animal.ToList();
@@ -128,6 +132,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult AplicarVacuna()
         {
             var animal = db.AC_Animal.ToList();
@@ -177,6 +182,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult AplicarMedicamento()
         {
             var animal = db.AC_Animal.ToList();
@@ -226,6 +232,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult EliminarControl_Diario(int id)
         {
             controlDiario = db.AC_Control_Diario.Find(id);

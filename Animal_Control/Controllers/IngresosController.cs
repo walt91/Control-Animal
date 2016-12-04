@@ -15,6 +15,7 @@ namespace Animal_Control.Controllers
         AC_Ingresos ingresos = new AC_Ingresos();
 
         // GET: Ingresos
+        [Authorize]
         public ActionResult Index()
         {
             StringBuilder ingresos = new StringBuilder();
@@ -31,6 +32,7 @@ namespace Animal_Control.Controllers
         }
 
         // Cargar vista para agregar Ingresos
+        [Authorize]
         public ActionResult AgregarIngresos()
         {
             var Articulo = db.AC_Articulo.ToList();
@@ -69,6 +71,7 @@ namespace Animal_Control.Controllers
         }
 
         // Cargar Vista para modificar Ingresos
+        [Authorize]
         public ActionResult ModificarIngresos(int id)
         {
             var ingreso = db.AC_Ingresos.Find(id);
@@ -100,6 +103,7 @@ namespace Animal_Control.Controllers
         }
 
         // Cargar vista para eliminar ingreso
+        [Authorize]
         public ActionResult EliminarIngresos(int id)
         {
             var model = db.AC_Ingresos.Find(id);

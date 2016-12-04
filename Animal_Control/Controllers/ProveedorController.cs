@@ -13,12 +13,14 @@ namespace Animal_Control.Controllers
         AC_Proveedor proveedor = new AC_Proveedor();
 
         // GET: Proveedor
+        [Authorize]
         public ActionResult Index()
         {
             var model = db.AC_Proveedor.ToList();
             return View(model);
         }
 
+        [Authorize]
         public ActionResult AgregarProveedor()
         {
             return View();
@@ -46,7 +48,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
-
+        [Authorize]
         public ActionResult ModificarProveedor(int id)
         {
             var model = db.AC_Proveedor.Find(id);
@@ -76,6 +78,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult EliminarProveedor(int id)
         {
             var model = db.AC_Proveedor.Find(id);

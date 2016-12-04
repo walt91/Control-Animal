@@ -13,12 +13,14 @@ namespace Animal_Control.Controllers
         AC_Medicamento medicamento = new AC_Medicamento();
 
         // GET: Medicamento
+        [Authorize]
         public ActionResult Index()
         {
             var model = db.AC_Medicamento.ToList();
             return View(model);
         }
 
+        [Authorize]
         public ActionResult AgregarMedicamento()
         {
             return View();
@@ -46,6 +48,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult ModificarMedicamento(int id)
         {
             var model = db.AC_Medicamento.Find(id);
@@ -75,6 +78,7 @@ namespace Animal_Control.Controllers
             return View(model.M_ID);
         }
 
+        [Authorize]
         public ActionResult EliminarMedicamento(int id)
         {
             var model = db.AC_Medicamento.Find(id);

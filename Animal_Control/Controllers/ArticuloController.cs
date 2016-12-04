@@ -15,13 +15,14 @@ namespace Animal_Control.Controllers
 
 
         // GET: Articulo
-
+        [Authorize]
         public ActionResult Index()
         {
             var model = db.AC_Articulo.ToList();
             return View(model);
         }
 
+        [Authorize]
         public ActionResult Agregar()
         {
             return View();
@@ -49,6 +50,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Modificar(int id)
         {
             var model = db.AC_Articulo.Find(id);
@@ -84,6 +86,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Eliminar(int id)
         {
             var model = db.AC_Articulo.Find(id);

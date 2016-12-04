@@ -12,9 +12,10 @@ namespace Animal_Control.Controllers
 {
     public class ReportesController : Controller
     {
-        AnimalControl db = new AnimalControl(); 
+        AnimalControl db = new AnimalControl();
 
         // GET: Reportes
+        [Authorize]
         public ActionResult ReporteGasto()
         {
             return View();
@@ -77,7 +78,7 @@ namespace Animal_Control.Controllers
         }
 
 
-
+        [Authorize]
         public ActionResult ReporteIngreso()
         {
             return View();
@@ -114,17 +115,19 @@ namespace Animal_Control.Controllers
 
 
 
-
+        [Authorize]
         public ActionResult ReporteAnimal()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult ReporteLiberacion()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult ReporteRiesgos()
         {
             var model = db.AC_Daño.ToList();
@@ -136,7 +139,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
-
+        [Authorize]
         public ActionResult ReporteZonas()
         {
             var model = db.AC_Zona.ToList();
@@ -148,7 +151,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
-
+        [Authorize]
         public ActionResult ReporteVacunas()
         {
             var model = db.AC_Vacuna.ToList();

@@ -13,12 +13,14 @@ namespace Animal_Control.Controllers
         AC_Zona zona = new AC_Zona();
 
         // GET: Zona
+        [Authorize]
         public ActionResult Index()
         {
             var model = db.AC_Zona.ToList();
             return View(model);
         }
 
+        [Authorize]
         public ActionResult AgregarZona()
         {
             return View();
@@ -50,6 +52,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult ModificarZona(int id)
         {
             var model = db.AC_Zona.Find(id);
@@ -79,6 +82,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult EliminarZona(int id)
         {
             var model = db.AC_Zona.Find(id);

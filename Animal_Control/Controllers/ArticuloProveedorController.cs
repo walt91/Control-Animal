@@ -14,6 +14,7 @@ namespace Animal_Control.Controllers
         AC_Articulo_Proveedor proveedor = new AC_Articulo_Proveedor();
 
         // GET: ArticuloProveedor
+        [Authorize]
         public ActionResult Index()
         {
             StringBuilder articulo = new StringBuilder();
@@ -28,6 +29,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult Agregar()
         {
             var Articulo = db.AC_Articulo.ToList();
@@ -62,6 +64,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Modificar(int id)
         {
             var model = db.AC_Articulo_Proveedor.Find(id);
@@ -99,6 +102,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Eliminar(int id)
         {
             var model = db.AC_Articulo_Proveedor.Find(id);

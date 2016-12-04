@@ -13,12 +13,14 @@ namespace Animal_Control.Controllers
         AC_Vacuna vacuna = new AC_Vacuna();
 
         // GET: Vacuna
+        [Authorize]
         public ActionResult Index()
         {
             var model = db.AC_Vacuna.ToList();
             return View(model);
         }
 
+        [Authorize]
         public ActionResult AgregarVacuna()
         {
             return View();
@@ -47,6 +49,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult ModificarVacuna(int id)
         {
             var vacuna = db.AC_Vacuna.Find();
@@ -81,6 +84,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult EliminarVacuna(int id)
         {
             var model = db.AC_Vacuna.Find(id);

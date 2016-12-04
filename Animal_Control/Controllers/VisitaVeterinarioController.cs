@@ -25,6 +25,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult Agregar()
         {
             var animal = db.AC_Animal.ToList();
@@ -62,6 +63,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Modificar(int id)
         {
             var veterinario = db.AC_Visita_Veterinaria.Find(id);
@@ -95,6 +97,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Eliminar(int id)
         {
             var model = db.AC_Visita_Veterinaria.Find(id);

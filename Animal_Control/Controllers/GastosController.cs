@@ -32,6 +32,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult Agregar()
         {
             var Articulo = db.AC_Articulo.ToList();
@@ -69,6 +70,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Modificar(int id)
         {
             var gasto = db.AC_Gastos.Find(id);
@@ -98,6 +100,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Eliminar(int id)
         {
             var model = db.AC_Gastos.Find(id);

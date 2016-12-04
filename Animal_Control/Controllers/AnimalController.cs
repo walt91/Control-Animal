@@ -20,7 +20,7 @@ namespace Animal_Control.Controllers
             ViewBag.Usuario = userLog.Nombre;
             return View(model);
         }
-
+        [Authorize]
         public ActionResult AgregarAnimal()
         {
             try
@@ -98,7 +98,7 @@ namespace Animal_Control.Controllers
         
             return View();
 }
-
+        [Authorize]
         public ActionResult ModificarAnimal(int id)
         {
             var model = db.AC_Animal.Find(id);
@@ -170,7 +170,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
-
+        [Authorize]
         public ActionResult EliminarAnimal(int id)
         {
             var model = db.AC_Animal.Find(id);

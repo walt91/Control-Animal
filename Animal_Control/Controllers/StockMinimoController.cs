@@ -25,6 +25,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult Agregar()
         {
             var stock = db.AC_Articulo.ToList();
@@ -60,6 +61,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Modificar(int id)
         {
             var stock = db.AC_Stock_Minimo.Find(id);
@@ -89,6 +91,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Eliminar(int id)
         {
             var model = db.AC_Stock_Minimo.Find(id);
