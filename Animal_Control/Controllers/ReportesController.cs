@@ -18,23 +18,6 @@ namespace Animal_Control.Controllers
         [Authorize]
         public ActionResult ReporteGasto()
         {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult PDFGasto(QueryFechas rango)
-        {
-            var date1 = rango.fecha1.ToString();
-            var date2 = rango.fecha2.ToString();
-            try
-            {
-                date1 = Regex.Replace(date1, "/ a . m", "", RegexOptions.None, TimeSpan.FromSeconds(2.5));
-                date2 = Regex.Replace(date2, "/ a . m", "", RegexOptions.None, TimeSpan.FromSeconds(2.5));
-            }
-            catch (RegexMatchTimeoutException)
-            {
-                return RedirectToAction("Error", "Reportes"); 
-            }
             StringBuilder gastos = new StringBuilder();
             gastos.AppendLine("SELECT g.G_ID, " +
                                 "a.Nombre Articulo, " +
@@ -43,25 +26,14 @@ namespace Animal_Control.Controllers
                                 "g.Fecha " +
                                 "FROM AC_Gastos g " +
                                 "INNER JOIN AC_Articulo a ON g.ID_Articulo = a.A_ID " +
-                                "INNER JOIN AC_Usuario u ON g.ID_Usuario = u.U_ID " +
-                                "WHERE g.Fecha BETWEEN " + date1 + " AND " + date2);
+                                "INNER JOIN AC_Usuario u ON g.ID_Usuario = u.U_ID ");
 
             var model = db.Database.SqlQuery<QueryGastos>(gastos.ToString()).ToList();
             return View(model);
         }
-        public ActionResult DescargarPDFGasto(string fecha1, string fecha2)
+
+        public ActionResult PDFGasto()
         {
-            var date1 = "";
-            var date2 = "";
-            try
-            {
-                date1 = Regex.Replace(fecha1, "-", "", RegexOptions.None, TimeSpan.FromSeconds(2.5));
-                date2 = Regex.Replace(fecha2, "-", "", RegexOptions.None, TimeSpan.FromSeconds(2.5));
-            }
-            catch (RegexMatchTimeoutException)
-            {
-                return RedirectToAction("Error", "Reportes");
-            }
             StringBuilder gastos = new StringBuilder();
             gastos.AppendLine("SELECT g.G_ID, " +
                                 "a.Nombre Articulo, " +
@@ -70,8 +42,7 @@ namespace Animal_Control.Controllers
                                 "g.Fecha " +
                                 "FROM AC_Gastos g " +
                                 "INNER JOIN AC_Articulo a ON g.ID_Articulo = a.A_ID " +
-                                "INNER JOIN AC_Usuario u ON g.ID_Usuario = u.U_ID " +
-                                "WHERE g.Fecha BETWEEN " + date1 + " AND " + date2);
+                                "INNER JOIN AC_Usuario u ON g.ID_Usuario = u.U_ID ");
 
             var model = db.Database.SqlQuery<QueryGastos>(gastos.ToString()).ToList();
             return View(model);
@@ -81,35 +52,31 @@ namespace Animal_Control.Controllers
         [Authorize]
         public ActionResult ReporteIngreso()
         {
-            return View();
+            StringBuilder ingresos = new StringBuilder();
+            ingresos.AppendLine("SELECT i.I_ID, " +
+                                "i.Dinero, " +
+                                "u.Nombre Usuario, " +
+                                "i.Comentario, " +
+                                "i.Fecha " +
+                                "FROM AC_Ingresos i " +
+                                "INNER JOIN AC_Usuario u ON i.ID_Usuario = u.U_ID ");
+
+            var model = db.Database.SqlQuery<QueryIngresos>(ingresos.ToString()).ToList();
+            return View(model);
         }
 
-        public ActionResult PDFIngreso(string fecha1, string fecha2)
+        public ActionResult PDFIngreso()
         {
-            var date1 = "";
-            var date2 = "";
-            try
-            {
-                date1 = Regex.Replace(fecha1, "-", "", RegexOptions.None, TimeSpan.FromSeconds(2.5));
-                date2 = Regex.Replace(fecha2, "-", "", RegexOptions.None, TimeSpan.FromSeconds(2.5));
-            }
-            catch (RegexMatchTimeoutException)
-            {
-                return RedirectToAction("Error", "Reportes");
-            }
-
-            StringBuilder gastos = new StringBuilder();
-            gastos.AppendLine("SELECT g.G_ID, " +
-                                "a.Nombre Articulo, " +
-                                "g.Costo, " +
+            StringBuilder ingresos = new StringBuilder();
+            ingresos.AppendLine("SELECT i.I_ID, " +
+                                "i.Dinero, " +
                                 "u.Nombre Usuario, " +
-                                "g.Fecha " +
-                                "FROM AC_Ingresos g " +
-                                "INNER JOIN AC_Articulo a ON g.ID_Articulo = a.A_ID " +
-                                "INNER JOIN AC_Usuario u ON g.ID_Usuario = u.U_ID " +
-                                "WHERE g.Fecha BETWEEN " + date1 + " AND " + date2);
+                                "i.Comentario, " +
+                                "i.Fecha " +
+                                "FROM AC_Ingresos i " +
+                                "INNER JOIN AC_Usuario u ON i.ID_Usuario = u.U_ID ");
 
-            var model = db.Database.SqlQuery<QueryIngresos>(gastos.ToString()).ToList();
+            var model = db.Database.SqlQuery<QueryIngresos>(ingresos.ToString()).ToList();
             return View(model);
         }
 
@@ -118,13 +85,27 @@ namespace Animal_Control.Controllers
         [Authorize]
         public ActionResult ReporteAnimal()
         {
-            return View();
+            var model = db.AC_Animal.ToList();
+            return View(model);
         }
+        public ActionResult PDFAnimal()
+        {
+            var model = db.AC_Animal.ToList();
+            return View(model);
+        }
+
+
 
         [Authorize]
         public ActionResult ReporteLiberacion()
         {
-            return View();
+            var liberacion = db.AC_Liberacion.ToList();
+            return View(liberacion);
+        }
+        public ActionResult PDFLiberacion()
+        {
+            var liberacion = db.AC_Liberacion.ToList();
+            return View(liberacion);
         }
 
         [Authorize]
@@ -199,6 +180,22 @@ namespace Animal_Control.Controllers
         public ActionResult DescargarIngresoPDF()
         {
             return new ActionAsPdf("PDFIngreso")
+            {
+                FileName = Server.MapPath("~/Content/Reporte.pdf")
+            };
+        }
+
+        public ActionResult DescargarAnimalPDF()
+        {
+            return new ActionAsPdf("PDFAnimal")
+            {
+                FileName = Server.MapPath("~/Content/Reporte.pdf")
+            };
+        }
+
+        public ActionResult DescargarLiberacionPDF()
+        {
+            return new ActionAsPdf("PDFLiberacion")
             {
                 FileName = Server.MapPath("~/Content/Reporte.pdf")
             };

@@ -1,11 +1,9 @@
 ﻿@model IEnumerable<Animal_Control.Models.QueryGastos>
 
 @{
-    ViewBag.Title = "ReporteGasto";
-    Layout = "~/Views/Shared/_LayoutTablas.cshtml";
+    ViewBag.Title = "PDFGasto";
+    Layout = "~/Views/Shared/_LayoutReporte.cshtml";
 }
-
-<h2>Reporte Gasto</h2>
 
 <section id="main-content" class=" ">
     <section class="wrapper main-wrapper" style=''>
@@ -16,13 +14,10 @@
             </div>
         </div>
         <div class="clearfix"></div>
-
+       
         <div class="col-lg-12">
             <section class="box ">
-                <header class="panel_header">
-                    <h2 class="title pull-left">Gastos</h2>
-
-                </header>
+                <header class="panel_header"><h2>Reporte Gasto</h2></header>
                 <div class="content-body">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -36,7 +31,6 @@
                                         <th>Costo</th>
                                         <th>Usuario</th>
                                         <th>Fecha</th>
-                                        <th>Opciones</th>
                                     </tr>
                                 </thead>
 
@@ -54,16 +48,11 @@
                                 </tbody>
                             </table>
                             <br>
-
                         </div>
                     </div>
                 </div>
             </section>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Descargar reporte" class="btn btn-default" />
-                </div>
-            </div>
         </div>
-        <section id="main-content" class=" ">
-            <section class="wrapper main-wrapper" style=''>
+    </section>
+</section>
+

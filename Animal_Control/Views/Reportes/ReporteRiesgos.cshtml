@@ -38,7 +38,7 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td>@item.ID</td>
+                                            <td>@item.D_Id</td>
                                             <td>@item.Nombre</td>
                                         </tr>
                                     }
@@ -51,7 +51,7 @@
                 </div>
             </section>
             <div class="form-group">
-                <a class="" href="@Url.Action("DescargarRiesgosPDF", "Reportes")">Descargar PDF</a>
+                <a class="btn btn-default" href="@Url.Action("DescargarRiesgosPDF", "Reportes")">Descargar PDF</a>
             </div>
         </div>
     </section>

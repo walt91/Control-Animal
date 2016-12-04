@@ -1447,9 +1447,7 @@
     <Content Include="Views\Zona\Error.cshtml" />
     <Content Include="Views\ControlDiario\AplicarVacuna.cshtml" />
     <Content Include="Views\ControlDiario\AplicarMedicamento.cshtml" />
-    <Content Include="Views\Reportes\PDFGasto.cshtml" />
     <Content Include="Views\Reportes\ReporteGasto.cshtml" />
-    <Content Include="Views\Reportes\ReporteIngreso.cshtml" />
     <Content Include="Views\Reportes\ReporteAnimal.cshtml" />
     <Content Include="Views\Reportes\ReporteLiberacion.cshtml" />
     <Content Include="Views\Reportes\ReporteRiesgos.cshtml" />
@@ -1460,6 +1458,11 @@
     <Content Include="Views\Reportes\ReporteVacunasPDF.cshtml" />
     <Content Include="Views\Reportes\ReporteZonasPDF.cshtml" />
     <Content Include="Views\Reportes\ReporteRiesgosPDF.cshtml" />
+    <Content Include="Views\Reportes\PDFGasto.cshtml" />
+    <Content Include="Views\Reportes\ReporteIngreso.cshtml" />
+    <Content Include="Views\Reportes\PDFIngreso.cshtml" />
+    <Content Include="Views\Reportes\PDFAnimal.cshtml" />
+    <Content Include="Views\Reportes\PDFLiberacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

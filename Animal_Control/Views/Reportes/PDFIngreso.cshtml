@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<Animal_Control.Models.QueryIngresos>
 
 @{
-    ViewBag.Title = "Lista de Ingresos";
-    Layout = "~/Views/Shared/_LayoutTablas.cshtml";
+    ViewBag.Title = "PDFGasto";
+    Layout = "~/Views/Shared/_LayoutReporte.cshtml";
 }
 
 <section id="main-content" class=" ">
@@ -14,12 +14,11 @@
             </div>
         </div>
         <div class="clearfix"></div>
-
+        
         <div class="col-lg-12">
             <section class="box ">
                 <header class="panel_header">
-                    <h2 class="title pull-left">Reporte de Ingresos</h2>
-
+                <h2>Reporte de Ingresos</h2>
                 </header>
                 <div class="content-body">
                     <div class="row">
@@ -48,18 +47,16 @@
                                             <td>@item.Fecha</td>
                                         </tr>
                                     }
-
                                 </tbody>
                             </table>
+                            <br>
                         </div>
                     </div>
                 </div>
             </section>
-            <div class="form-group">
-                    <a class="btn btn-default" href="@Url.Action("DescargarIngresoPDF", "Reportes")">Descargar PDF</a>             
-            </div>
         </div>
     </section>
 </section>
+
 
 

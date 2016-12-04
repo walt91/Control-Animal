@@ -287,34 +287,46 @@
                     </li>
                     <li class="">
                         <a href="javascript:;">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span class="title">Persona que Reporta</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="@Url.Action("Index", "VisitaVeterinario")">Ver Visitas Veterinarias</a>
+                            </li>
+                            <li>
+                                <a class="" href="@Url.Action("Agregar", "VisitaVeterinario")">Agregar Visita Veterinaria</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
                             <i class="glyphicon glyphicon-list-alt"></i>
                             <span class="title">Reportes</span>
                             <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a class="" href="@Url.Action("Reporte", "Articulo")">Reporte del inventario</a>
+                                <a class="" href="@Url.Action("ReporteVacunas", "Reportes")">Reporte de vacunas aplicadas</a>
                             </li>
                             <li>
-                                <a class="" href="@Url.Action("Reporte", "Vacuna")">Reporte de vacunas aplicadas</a>
+                                <a class="" href="@Url.Action("ReporteZonas", "Reportes")">Reporte de las zonas de más riesgo</a>
                             </li>
                             <li>
-                                <a class="" ref="@Url.Action("Reporte", "Zona")">Reporte de las zonas de más riesgo</a>
+                                <a class="" href="@Url.Action("ReporteLiberacion", "Reportes")">Reporte  de animales liberados</a>
                             </li>
                             <li>
-                                <a class="" ref="@Url.Action("ReporteLiberado", "Animal")">Reporte  de animales liberados</a>
+                                <a class="" href="@Url.Action("ReporteAnimal", "Reportes")">Reporte de animales que ingresan al Proyecto</a>
                             </li>
                             <li>
-                                <a class="" ref="@Url.Action("ReporteIngresa", "Animal")">Reporte de animales que ingresan al Proyecto</a>
+                                <a class="" href="@Url.Action("ReporteRiesgos", "Reportes")">Reporte de los riesgos más frecuentes</a>
                             </li>
                             <li>
-                                <a class="" ref="@Url.Action("Reporte", "Daño")">Reporte de los riesgos más frecuente</a>
+                                <a class="" href="@Url.Action("ReporteGasto", "Reportes")">Reporte de gastos</a>
                             </li>
                             <li>
-                                <a class="" ref="@Url.Action("Reporte", "Gastos")">Reporte de gastos</a>
-                            </li>
-                            <li>
-                                <a class="" ref="@Url.Action("Reporte", "Ingresos")">Reporte de ingresos</a>
+                                <a class="" href="@Url.Action("ReporteIngreso", "Reportes")">Reporte de ingresos</a>
                             </li>
                         </ul>
                     </li>

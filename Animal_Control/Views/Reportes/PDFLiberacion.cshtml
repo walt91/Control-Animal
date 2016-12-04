@@ -1,24 +1,16 @@
-﻿@model IEnumerable<Animal_Control.Models.QueryIngresos>
-
+﻿
 @{
-    ViewBag.Title = "Lista de Ingresos";
-    Layout = "~/Views/Shared/_LayoutTablas.cshtml";
+    ViewBag.Title = "PDFLiberacion";
+    Layout = "~/Views/Shared/_LayoutReporte.cshtml";
 }
 
 <section id="main-content" class=" ">
     <section class="wrapper main-wrapper" style=''>
 
-        <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-            <div class="page-title">
-
-            </div>
-        </div>
-        <div class="clearfix"></div>
-
         <div class="col-lg-12">
             <section class="box ">
                 <header class="panel_header">
-                    <h2 class="title pull-left">Reporte de Ingresos</h2>
+                    <h2>Reporte de Liberaciones</h2>
 
                 </header>
                 <div class="content-body">
@@ -30,10 +22,11 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Dinero</th>
-                                        <th>Usuario</th>
+                                        <th>Especie</th>
+                                        <th>Sexo</th>
+                                        <th>Edad</th>
+                                        <th>Condicion</th>
                                         <th>Comentario</th>
-                                        <th>Fecha</th>
                                     </tr>
                                 </thead>
 
@@ -41,23 +34,20 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td>@item.I_ID</td>
-                                            <td>₡@item.Dinero</td>
-                                            <td>@item.Usuario</td>
+                                            <td>@item.ID</td>
+                                            <td>@item.Especie</td>
+                                            <td>@item.Sexo</td>
+                                            <td>@item.Edad</td>
+                                            <td>@item.Condicion</td>
                                             <td>@item.Comentario</td>
-                                            <td>@item.Fecha</td>
                                         </tr>
                                     }
-
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </section>
-            <div class="form-group">
-                    <a class="btn btn-default" href="@Url.Action("DescargarIngresoPDF", "Reportes")">Descargar PDF</a>             
-            </div>
         </div>
     </section>
 </section>

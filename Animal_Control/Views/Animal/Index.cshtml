@@ -51,7 +51,6 @@
                                             <td>@Html.DisplayFor(modelItem => item.Condicion)</td>
                                             <td>@Html.DisplayFor(modelItem => item.Comentario)</td>
                                             <td>
-                                                @Html.ActionLink("Ver Detalle", "Details", new { id = item.ID }) |
                                                 @Html.ActionLink("Editar", "ModificarAnimal", new { id = item.ID }) |
                                                 @Html.ActionLink("Eliminar", "EliminarAnimal", new { id = item.ID })
                                             </td>

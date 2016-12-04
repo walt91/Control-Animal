@@ -1,49 +1,65 @@
-﻿@model Animal_Control.Models.AC_Liberacion
+﻿@model IEnumerable<Animal_Control.Models.AC_Liberacion>
 
 @{
-    ViewBag.Title = "Reporte Liberaciones";
+    ViewBag.Title = "Lista de Animales Liberados";
     Layout = "~/Views/Shared/_LayoutTablas.cshtml";
 }
-
 
 <section id="main-content" class=" ">
     <section class="wrapper main-wrapper" style=''>
 
-        <h2>Reporte de Liberaciones</h2>z
+        <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+            <div class="page-title">
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="form-horizontal">
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Ver Reporte" class="btn btn-default" href="@Url.Action("PDFLiberacion", "Reportes")" />
-                    </div>
-                </div>
             </div>
-        }
+        </div>
+        <div class="clearfix"></div>
 
-        <section id="main-content" class=" ">
-            <section class="wrapper main-wrapper" style=''>
+        <div class="col-lg-12">
+            <section class="box ">
+                <header class="panel_header">
+                    <h2 class="title pull-left">Reporte de Animales Liberados</h2>
+
+                </header>
+                <div class="content-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
 
 
+                            <table id="example-1" class="table table-striped dt-responsive display" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Especie</th>
+                                        <th>Sexo</th>
+                                        <th>Edad</th>
+                                        <th>Condicion</th>
+                                        <th>Comentario</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ID</td>
+                                            <td>@item.Especie</td>
+                                            <td>@item.Sexo</td>
+                                            <td>@item.Edad</td>
+                                            <td>@item.Condicion</td>
+                                            <td>@item.Comentario</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </section>
+            <div class="form-group">
+                <a class="btn btn-default" href="@Url.Action("DescargarLiberacionPDF", "Reportes")">Descargar PDF</a>
+            </div>
+        </div>
+    </section>
+</section>
