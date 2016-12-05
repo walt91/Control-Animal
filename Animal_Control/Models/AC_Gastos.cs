@@ -14,6 +14,7 @@ namespace Animal_Control.Models
        
         public int? ID_Articulo { get; set; }
 
+        [Required]
         public int Costo { get; set; }
 
         [DataType(DataType.Date)]

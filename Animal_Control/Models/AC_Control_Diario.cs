@@ -22,7 +22,7 @@ namespace Animal_Control.Models
 
         public int? ID_Vacuna { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Escriba un comentario")]
         [StringLength(500)]
         public string Comentario { get; set; }
 

@@ -17,11 +17,11 @@ namespace Animal_Control.Models
         [Key]
         public int PR_ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Escriba un nombre")]
         [StringLength(150)]
         public string Nombre { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Escriba la cedula")]
         [StringLength(50)]
         public string Cedula { get; set; }
 

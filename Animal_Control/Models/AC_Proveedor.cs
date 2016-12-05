@@ -17,7 +17,7 @@ namespace Animal_Control.Models
         [Key]
         public int P_ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Escriba el nombre")]
         [StringLength(100)]
         public string Nombre { get; set; }
 

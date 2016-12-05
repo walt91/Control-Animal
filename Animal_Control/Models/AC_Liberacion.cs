@@ -20,13 +20,13 @@ namespace Animal_Control.Models
         [StringLength(50)]
         public string Sexo { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Escriba la condicion")]
         [StringLength(50)]
         public string Condicion { get; set; }
 
         public int Peso { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Escriba un temperamento")]
         [StringLength(50)]
         public string Temperamento { get; set; }
 
@@ -36,7 +36,7 @@ namespace Animal_Control.Models
 
         public int Temperatura { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Rellene el espacio")]
         [StringLength(50)]
         public string Coloracion_Mucosa { get; set; }
 
@@ -49,7 +49,7 @@ namespace Animal_Control.Models
         [DataType(DataType.Date)]
         public DateTime Fecha { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Escriba un comentario")]
         [StringLength(500)]
         public string Comentario { get; set; }
 

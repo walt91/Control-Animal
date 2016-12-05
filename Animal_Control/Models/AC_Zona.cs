@@ -17,7 +17,7 @@ namespace Animal_Control.Models
 
         public int ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Escriba una zona")]
         [StringLength(50)]
         public string Nombre { get; set; }
 

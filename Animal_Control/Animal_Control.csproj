@@ -178,7 +178,6 @@
     <Compile Include="Models\AnimalControl.cs" />
     <Compile Include="Models\QueryArticuloProveedor.cs" />
     <Compile Include="Models\QueryControlDiario.cs" />
-    <Compile Include="Models\QueryFechas.cs" />
     <Compile Include="Models\QueryGastos.cs" />
     <Compile Include="Models\QueryIngresos.cs" />
     <Compile Include="Models\QueryInventario.cs" />
@@ -1317,6 +1316,7 @@
     <Content Include="Content\plugins\uikit\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\plugins\uikit\fonts\FontAwesome.otf" />
     <Content Include="App_Browsers\qt.browser" />
+    <None Include="Properties\PublishProfiles\animal.pubxml" />
     <None Include="Properties\PublishProfiles\animalControl.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
