@@ -41,6 +41,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //Se agrega un nuevo gasto
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Agregar(AC_Gastos g)
@@ -77,6 +78,7 @@ namespace Animal_Control.Controllers
             return View(gasto);
         }
         
+        //Se modifica un gasto
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Modificar(int id, AC_Gastos g)
@@ -111,6 +113,7 @@ namespace Animal_Control.Controllers
             return View("Index");
         }
 
+        //Se elimina un gasto
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Eliminar(int id, QueryGastos gastos)

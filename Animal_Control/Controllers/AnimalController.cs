@@ -20,6 +20,7 @@ namespace Animal_Control.Controllers
             ViewBag.Usuario = userLog.Nombre;
             return View(model);
         }
+
         [Authorize]
         public ActionResult AgregarAnimal()
         {
@@ -60,7 +61,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
-
+        //Se agrega un nuevo animal
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AgregarAnimal(AC_Animal a)
@@ -129,6 +130,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        //Se modifica un nuevo animal
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ModificarAnimal(AC_Animal a)
@@ -181,6 +183,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        //Se elimina un animal
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EliminarAnimal(int id, AC_Animal a)

@@ -26,6 +26,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //POST : Agregar Medicamento
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AgregarMedicamento(AC_Medicamento medicamentos)
@@ -55,6 +56,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        //POST : Modificar medicamento
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ModificarMedicamento(int id, AC_Medicamento model)
@@ -89,6 +91,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        //POST : Eliminar medicamento
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EliminarMedicamento(int id, AC_Medicamento m)

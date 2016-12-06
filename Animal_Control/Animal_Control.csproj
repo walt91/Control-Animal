@@ -164,7 +164,6 @@
     <Compile Include="Models\AC_Daño.cs" />
     <Compile Include="Models\AC_Gastos.cs" />
     <Compile Include="Models\AC_Ingresos.cs" />
-    <Compile Include="Models\AC_Inventario.cs" />
     <Compile Include="Models\AC_Liberacion.cs" />
     <Compile Include="Models\AC_Medicamento.cs" />
     <Compile Include="Models\AC_Persona_Reporta.cs" />

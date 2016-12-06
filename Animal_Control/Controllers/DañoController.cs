@@ -27,6 +27,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //Se agrega un nuevo daño
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AgregarDaño(AC_Daño d)
@@ -67,6 +68,7 @@ namespace Animal_Control.Controllers
             return View(daño);
         }
 
+        //Se modifica un nuevo daño
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ModificarDaño(AC_Daño d)
@@ -100,6 +102,7 @@ namespace Animal_Control.Controllers
             return View("Index");
         }
 
+        //Se elimina un daño
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EliminarDaño(int id, AC_Daño d)

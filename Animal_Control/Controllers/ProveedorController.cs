@@ -26,6 +26,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //POST : Agregar Proveedor
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AgregarProveedor(AC_Proveedor p)
@@ -55,6 +56,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        //POST : Modificar Proveedor
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ModificarProveedor(int id, AC_Proveedor p)
@@ -89,6 +91,7 @@ namespace Animal_Control.Controllers
             return View("Index");
         }
 
+        //POST : Eliminar Proveedor
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EliminarProveedor(int id, AC_Proveedor p)

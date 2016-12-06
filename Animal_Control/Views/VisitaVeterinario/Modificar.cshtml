@@ -28,18 +28,9 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.ID_Usuario, "Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownList("ID_Usuario", ViewBag.usuario as SelectList)
-                        @Html.ValidationMessageFor(model => model.ID_Usuario, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-
-                <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Actualizar" class="btn btn-default" />
-                        <a href="@Url.Action("Index", "VisitaVeterinaria")" class="btn btn-default"> Cancelar </a>
+                        <a href="@Url.Action("Index", "VisitaVeterinario")" class="btn btn-default"> Cancelar </a>
                     </div>
                 </div>
             </div>

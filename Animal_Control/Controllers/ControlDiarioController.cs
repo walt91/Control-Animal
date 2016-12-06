@@ -64,6 +64,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //Se agrega un nuevo control diario
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AgregarControl_Diario(AC_Control_Diario control)
@@ -107,6 +108,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //Se modifica un control diario animal
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ModificarControl_Diario(int id, AC_Control_Diario control)
@@ -156,6 +158,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //Se aplica una nueva vacuna
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AplicarVacuna(AC_Control_Diario vacuna)
@@ -206,6 +209,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //Se aplica un medicamento
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AplicarMedicamento(AC_Control_Diario medicamento)
@@ -239,9 +243,10 @@ namespace Animal_Control.Controllers
             return View(controlDiario);
         }
 
+        //Se elimina un control diario
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EliminarCOntrol(int id)
+        public ActionResult EliminarControl_Diario(int id, AC_Control_Diario a)
         {
             try
             {

@@ -32,6 +32,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        // Imprimir el PDF
         public ActionResult PDFGasto()
         {
             StringBuilder gastos = new StringBuilder();
@@ -65,6 +66,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        // Imprimir el PDF
         public ActionResult PDFIngreso()
         {
             StringBuilder ingresos = new StringBuilder();
@@ -88,6 +90,7 @@ namespace Animal_Control.Controllers
             var model = db.AC_Animal.ToList();
             return View(model);
         }
+        // Imprimir el PDF
         public ActionResult PDFAnimal()
         {
             var model = db.AC_Animal.ToList();
@@ -102,6 +105,7 @@ namespace Animal_Control.Controllers
             var liberacion = db.AC_Liberacion.ToList();
             return View(liberacion);
         }
+        // Imprimir el PDF
         public ActionResult PDFLiberacion()
         {
             var liberacion = db.AC_Liberacion.ToList();
@@ -114,6 +118,7 @@ namespace Animal_Control.Controllers
             var model = db.AC_Daño.ToList();
             return View(model);
         }
+        // Imprimir el PDF
         public ActionResult ReporteRiesgosPDF()
         {
             var model = db.AC_Daño.ToList();
@@ -126,6 +131,7 @@ namespace Animal_Control.Controllers
             var model = db.AC_Zona.ToList();
             return View(model);
         }
+        // Imprimir el PDF
         public ActionResult ReporteZonasPDF()
         {
             var model = db.AC_Zona.ToList();
@@ -138,6 +144,7 @@ namespace Animal_Control.Controllers
             var model = db.AC_Vacuna.ToList();
             return View(model);
         }
+        // Imprimir el PDF
         public ActionResult ReporteVacunasPDF()
         {
             var model = db.AC_Vacuna.ToList();

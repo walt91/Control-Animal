@@ -13,7 +13,7 @@
             @Html.AntiForgeryToken()
 
             <div>
-                <h3>Eliminar Zona</h3>
+                <h3>Eliminar Visita Veterinario</h3>
                 <hr />
                 <table cellspacing="0" width="100%">
                     <thead>
@@ -22,24 +22,20 @@
                             <th>Animal</th>
                             <th>Usuario</th>
                             <th>Fecha</th>
-
                         </tr>
                     </thead>
-
                     <tbody>
                         <tr>
-                            <td>@Html.DisplayFor(modelItem => Model.VV_ID) </td>
-                            <td>@Html.DisplayFor(modelItem => Model.ID_Animal)  </td>
-                            <td>@Html.DisplayFor(modelItem => Model.ID_Animal)  </td>
-                            <td>@Html.DisplayFor(modelItem => Model.ID_Animal)  </td>
-
+                            <td>@Model.VV_ID</td>
+                            <td>@Model.ID_Animal  </td>
+                            <td>@Model.ID_Usuario  </td>
+                            <td>@Model.Fecha </td>
                         </tr>
-
                     </tbody>
                 </table>
                 <div class="form-actions no-color">
                     <input type="submit" value="Eliminar Visita" class="btn btn-default" />
-                    <a href="@Url.Action("Index", "VisitaVeterinaria")" class="btn btn-default"> Cancelar </a>
+                    <a href="@Url.Action("Index", "VisitaVeterinario")" class="btn btn-default"> Cancelar </a>
                 </div>
 
             </div>

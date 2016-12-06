@@ -24,11 +24,11 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //Loguear el usuario
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(AC_Usuario u)
-        {
-          
+        {        
                 if (IsValid(u.Correo, u.Contraseña))
                 {
                     AC_Usuario userLog = db.AC_Usuario.SingleOrDefault(x => x.Correo == u.Correo);
@@ -45,6 +45,7 @@ namespace Animal_Control.Controllers
             return View(u);
         }
 
+        //Validar el usuario
         private static bool IsValid(string email, string password)
         {
             var isValid = false;
@@ -60,7 +61,8 @@ namespace Animal_Control.Controllers
             }
             return isValid;
         }
-
+        
+        //Cerrar Sesion
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();

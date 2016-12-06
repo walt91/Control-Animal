@@ -12,15 +12,15 @@ namespace Animal_Control.Controllers
     {
         public AnimalControl db = new AnimalControl();
         AC_Visita_Veterinaria veterinario = new AC_Visita_Veterinaria();
-        // GET: Stock Maximo
+        // GET: Visita Veterinario
         [Authorize]
         public ActionResult Index()
         {
             StringBuilder visitaVeterinario = new StringBuilder();
-            visitaVeterinario.AppendLine("SELECT v.VV_ID, a.Especie Animal, u.Nombre, v.Fecha " +
+            visitaVeterinario.AppendLine("SELECT v.VV_ID ID, a.Especie Animal, u.Nombre Usuario, v.Fecha " +
                                 "from AC_Visita_Veterinaria v " +
-                                "INNER JOIN AC_Animal a ON v.VV_ID = a.ID " +
-                                "INNER JOIN AC_USer u ON v.VV_ID = u.U_ID ");
+                                "INNER JOIN AC_Animal a ON v.ID_Animal = a.ID " +
+                                "INNER JOIN AC_Usuario u ON v.ID_Usuario = u.U_ID ");
             var model = db.Database.SqlQuery<QueryVisitaVeterinario>(visitaVeterinario.ToString()).ToList();
             return View(model);
         }
@@ -34,6 +34,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //POST : Agregar Visita Veterinario
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Agregar(AC_Visita_Veterinaria v)
@@ -73,6 +74,7 @@ namespace Animal_Control.Controllers
             return View(veterinario);
         }
 
+        //POST : Modificar Visita Veterinario
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Modificar(int id, AC_Visita_Veterinaria v)
@@ -108,6 +110,7 @@ namespace Animal_Control.Controllers
             return View("Index");
         }
 
+        //POST : Eliminar Visita Veterinario
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Eliminar(int id, AC_Visita_Veterinaria v)

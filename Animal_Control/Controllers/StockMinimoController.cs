@@ -34,6 +34,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //POST : Agregar Stock Minimo
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Agregar(AC_Stock_Minimo s)
@@ -68,6 +69,7 @@ namespace Animal_Control.Controllers
             return View(stock);
         }
 
+        //POST : Modificar Stock Minimo
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Modificar(int id, AC_Stock_Maximo s)
@@ -102,6 +104,7 @@ namespace Animal_Control.Controllers
             return View("Index");
         }
 
+        //POST : Eliminar Stock Minimo
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Eliminar(int id, AC_Stock_Maximo s)

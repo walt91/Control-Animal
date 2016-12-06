@@ -19,7 +19,6 @@
         public virtual DbSet<AC_Daño> AC_Daño { get; set; }
         public virtual DbSet<AC_Gastos> AC_Gastos { get; set; }
         public virtual DbSet<AC_Ingresos> AC_Ingresos { get; set; }
-        public virtual DbSet<AC_Inventario> AC_Inventario { get; set; }
         public virtual DbSet<AC_Liberacion> AC_Liberacion { get; set; }
         public virtual DbSet<AC_Medicamento> AC_Medicamento { get; set; }
         public virtual DbSet<AC_Persona_Reporta> AC_Persona_Reporta { get; set; }

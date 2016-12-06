@@ -26,6 +26,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //POST : Agregar Zona
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AgregarZona(AC_Zona zone)
@@ -59,6 +60,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        //POST : Modificar Visita Veterinario
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ModificarZona(int id, AC_Zona zone)
@@ -93,6 +95,7 @@ namespace Animal_Control.Controllers
             return View("Index");
         }
 
+        //POST : Eliminar Visita Veterinario
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EliminarZona(int id, AC_Zona zone)

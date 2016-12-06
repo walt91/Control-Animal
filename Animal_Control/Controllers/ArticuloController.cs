@@ -28,6 +28,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //Se agrega un nuevo articulo
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Agregar(AC_Articulo a)
@@ -61,7 +62,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
-
+        //Se modifica un articulo
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Modificar(AC_Articulo a)
@@ -97,6 +98,7 @@ namespace Animal_Control.Controllers
             return View("Index");
         }
 
+        //Se elimina un articulo
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Eliminar(int id, AC_Articulo a)

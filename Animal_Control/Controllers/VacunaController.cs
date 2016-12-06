@@ -26,6 +26,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //POST : Agregar una Vacuna
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AgregarVacuna(AC_Vacuna a)
@@ -60,6 +61,7 @@ namespace Animal_Control.Controllers
             return View(vacuna);
         }
 
+        //POST : Modificar una Vacuna
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ModificarVacuna( AC_Vacuna v)
@@ -83,7 +85,7 @@ namespace Animal_Control.Controllers
             }
             return View();
         }
-
+        
         [Authorize]
         public ActionResult EliminarVacuna(int id)
         {
@@ -95,6 +97,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        //POST : Eliminar una Vacuna
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Eliminar(int id, AC_Vacuna a)

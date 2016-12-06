@@ -53,7 +53,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
-
+        //POST : Agregar liberacion
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AgregarLiberacion(AC_Liberacion l)
@@ -118,6 +118,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        //POST : Modificar Liberacion
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ModificarLiberacion(int id, AC_Liberacion L)
@@ -168,6 +169,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        //POST : Eliminar Liberacion
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EliminarLiberacion(int id, AC_Liberacion l)

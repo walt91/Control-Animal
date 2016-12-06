@@ -1,46 +1,62 @@
-﻿@model IEnumerable<Animal_Control.Models.AC_Visita_Veterinaria>
+﻿@model IEnumerable<Animal_Control.Models.QueryVisitaVeterinario>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Visitas";
     Layout = "~/Views/Shared/_LayoutTablas.cshtml";
 }
 
-<h2>Index</h2>
+<section id="main-content" class=" ">
+    <section class="wrapper main-wrapper" style=''>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AC_Animal.Especie)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AC_Usuario.Correo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fecha)
-        </th>
-        <th></th>
-    </tr>
+        <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+            <div class="page-title">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AC_Animal.Especie)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AC_Usuario.Correo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.VV_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VV_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VV_ID })
-        </td>
-    </tr>
-}
+            </div>
+        </div>
+        <div class="clearfix"></div>
 
-</table>
+        <div class="col-lg-12">
+            <section class="box ">
+                <header class="panel_header">
+                    <h2 class="title pull-left">Lista de Visitas al Veterinario</h2>
+
+                </header>
+                <div class="content-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+                            <table id="example-1" class="table table-striped dt-responsive display" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Animal</th>
+                                        <th>Nombre</th>
+                                        <th>Fecha</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ID</td>
+                                            <td>@item.Animal</td>
+                                            <td>@item.Usuario</td>
+                                            <td>@item.Fecha</td>
+                                            <td>
+                                                @Html.ActionLink("Editar", "Modificar", new { id = item.ID }) |
+                                                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.ID })
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</section>

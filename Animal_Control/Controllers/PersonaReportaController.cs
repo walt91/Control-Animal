@@ -26,6 +26,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //POST : Agregar Persona Reporta
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AgregarPersona(AC_Persona_Reporta persona)
@@ -60,6 +61,7 @@ namespace Animal_Control.Controllers
             return View(PReporta);
         }
 
+        //POST : Modificar Persona Reporta
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ModificarPersona(int id, AC_Persona_Reporta usuario)
@@ -95,6 +97,7 @@ namespace Animal_Control.Controllers
             return View("Index");
         }
 
+        //POST : Eliminar Persona Reporta
         [HttpPost]
         public ActionResult EliminarPersona(int id, AC_Usuario usuario)
         {

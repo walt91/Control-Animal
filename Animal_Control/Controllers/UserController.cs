@@ -26,6 +26,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //POST : Agregar Usuario
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AgregarUsuario(AC_Usuario usuario)
@@ -62,6 +63,7 @@ namespace Animal_Control.Controllers
             return View(user);
         }
 
+        //POST : Modificar un Usuario
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ModificarUsuario(int id, AC_Usuario usuario)
@@ -98,6 +100,7 @@ namespace Animal_Control.Controllers
             return View("Index");
         }
 
+        //POST : Eliminar un Usuario
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EliminarUsuario(int id, AC_Usuario usuario)

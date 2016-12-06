@@ -41,6 +41,7 @@ namespace Animal_Control.Controllers
             return View();
         }
 
+        //Se agrega un nuevo articulo a un proveedor
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Agregar(AC_Articulo_Proveedor p)
@@ -77,7 +78,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
-
+        //Se modifica un nuevo articulo Proveedor
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Modificar(int id, AC_Articulo_Proveedor p)
@@ -113,6 +114,7 @@ namespace Animal_Control.Controllers
             return View(model);
         }
 
+        //Se elimina un articulo de un proveedor
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Eliminar(int id, AC_Articulo a)
